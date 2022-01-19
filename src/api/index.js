@@ -5,7 +5,7 @@ const API_URL = "https://api.nasa.gov/planetary/apod?api_key=5RvZaPtz0NBcMOI5Ado
 const fetchImages = async () => {
     return axios({
         method: "GET", 
-        url: `${API_URL}&count=10`,
+        url: `${API_URL}&count=15`,
     }).then((response) => response.data)
 }
 

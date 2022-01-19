@@ -5,6 +5,7 @@ import { fetchImages } from "../api";
 
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import Button from '@mui/material/Button';
 
 export default function Images() {
 
@@ -45,6 +46,7 @@ export default function Images() {
                     ))}
             </Grid>        
             </div>
+            <Button>Load More Images</Button>
         </Container>
     )
 }
