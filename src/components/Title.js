@@ -24,7 +24,7 @@ export default function Title() {
                 }}
                 gutterBottom
             >
-                Spacetagram
+                Spacestagram
             </Typography> 
         </ThemeProvider>
     )
