@@ -20,7 +20,7 @@ export default function ImageCard({image}) {
     const [open, setOpen] = useState(false);
     const [backgroundColor, setBackgroundColor] = useState('linen');
 
-    const { copyright, date, explanation, hdurl, media_type, service_version, title, url } = image;
+    const { date, explanation, title, url } = image;
 
     const handleClick = () => {
         if (backgroundColor === "linen") {
@@ -31,7 +31,7 @@ export default function ImageCard({image}) {
         }
       };
     
-      const handleClose = (event, reason) => {
+      const handleClose = (reason) => {
         if (reason === 'clickaway') {
           return;
         }

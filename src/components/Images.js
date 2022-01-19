@@ -46,7 +46,17 @@ export default function Images() {
                     ))}
             </Grid>        
             </div>
-            <Button>Load More Images</Button>
+            <div 
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexDirection: "column",
+                    marginBottom: "50px",
+                    }}
+            >
+                <Button variant="contained" style={{color: "navy", backgroundColor: "linen"}}> Load More Image </Button>
+            </div>
         </Container>
     )
 }
