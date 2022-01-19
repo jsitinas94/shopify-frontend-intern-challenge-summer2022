@@ -20,7 +20,7 @@ export default function ImageCard({image}) {
     const [open, setOpen] = useState(false);
     const [backgroundColor, setBackgroundColor] = useState('linen');
 
-    const { date, explanation, title, url } = image;
+    const { date, explanation, title, url, media_type, copyright } = image;
 
     const handleClick = () => {
         if (backgroundColor === "linen") {
@@ -42,7 +42,7 @@ export default function ImageCard({image}) {
     return (
         <Card varient="outlined" sx={{minHeight: 360}} >
             <CardMedia
-            component="img"
+            component={media_type === "video" ? "video" : "img"}
             height="300"
             image={url}
             alt={title}
@@ -51,8 +51,9 @@ export default function ImageCard({image}) {
             <Typography gutterBottom variant="h6" component="div">
                 {title} 
                 <br/>
-                {date}
+                {date} 
             </Typography>
+            {copyright && <p>&copy; {copyright}</p>}
             <Typography variant="body2" color="text.secondary"  style={{ overflow : 'scroll', maxHeight: 200 }}>
                 {explanation}
             </Typography>

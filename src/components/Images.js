@@ -9,15 +9,21 @@ import Button from '@mui/material/Button';
 
 export default function Images() {
 
+    const [ imageList, setImageList ] = useState([]);
+    const [ triggerNewImages, setTriggerNewImages] = useState(0);
+
     useEffect(async() => {
         const imageData = await fetchImages();
         setImageList(imageData);
-        //console.log(data);
-    }, []);
+        window.scrollTo(0, 0);
+    }, [triggerNewImages]);
 
-    const [ imageList, setImageList ] = useState([]);
+    function handleClick() {
+        let count = triggerNewImages;
+        count++
+        setTriggerNewImages(count);
+    }
 
-    console.log(imageList)
     return (
         <Container>
             <div
@@ -55,7 +61,13 @@ export default function Images() {
                     marginBottom: "50px",
                     }}
             >
-                <Button variant="contained" style={{color: "navy", backgroundColor: "linen"}}> Load More Image </Button>
+                <Button 
+                    variant="contained" 
+                    style={{color: "navy", backgroundColor: "linen"}}
+                    onClick={handleClick}
+                > 
+                    Load More Image 
+                </Button>
             </div>
         </Container>
     )
